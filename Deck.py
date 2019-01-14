@@ -13,7 +13,7 @@ class Deck:
         all_values = CardValue()
         all_cards = []
 
-        for value in all_values.values:
+        for value in all_values.symbols:
             for suit in all_suits.suits:
                 new_card = Card(suit, value)
                 all_cards.append(new_card)
