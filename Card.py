@@ -8,8 +8,6 @@ class Card:
 
     def add_value(self):
         card_value = CardValue()
-        for symbol, value in card_value.value_to_symbol:
+        for symbol, value in card_value.value_to_symbol.items():
             if self.symbol == symbol:
                 self.value = value
-
-                // too many values to unpack
