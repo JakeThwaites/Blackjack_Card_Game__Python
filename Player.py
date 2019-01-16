@@ -4,16 +4,13 @@ class Player:
         self.hand = []
         self.totalHandValue = 0
         self.ended_go = False
+        self.aces = 0
 
     def take_card(self, card):
         self.hand.append(card)
         self.totalHandValue += card.value
 
     def is_bust(self):
-        # if self.totalHandValue > 21:
-        #     return True
-        # else:
-        #     return False
         return self.totalHandValue > 21
 
     def has_won(self):
@@ -33,6 +30,8 @@ class Player:
         else:
             print("Please choose a valid option.")
 
+    def has_ace(self):
+        self.aces += 1
 
 
 

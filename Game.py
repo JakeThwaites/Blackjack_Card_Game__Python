@@ -41,7 +41,7 @@ class Game:
         winner = self.no_winner
 
         for player in self.players:
-            if (21 - player.totalHandValue) < (21 - winner.totalHandValue):
+            if (21 - player.totalHandValue) < (21 - winner.totalHandValue) and player.is_bust() == False:
                 winner = player
 
         return winner
