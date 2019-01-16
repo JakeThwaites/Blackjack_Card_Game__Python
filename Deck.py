@@ -16,9 +16,12 @@ class Deck:
         for value in all_values.symbols:
             for suit in all_suits.suits:
                 new_card = Card(suit, value)
+                new_card.add_value()
                 all_cards.append(new_card)
 
         self.cards = all_cards
+
+
 
     def shuffle(self):
         random.shuffle(self.cards)
