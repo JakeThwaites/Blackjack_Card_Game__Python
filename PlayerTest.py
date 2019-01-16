@@ -37,6 +37,10 @@ class TestPlayer(unittest.TestCase):
         self.player.take_card(self.card3)
         self.assertEqual(True, self.player.is_bust())
 
+    # def test_can_take_a_hit(self):
+    #     self.assertEqual(0, len(self.player.hand))
+    #     self.player.take_a_hit(self.deck)
+    #     self.assertEqual(1, len(self.player.hand))
 
 if __name__ == '__main__':
     unittest.main()
