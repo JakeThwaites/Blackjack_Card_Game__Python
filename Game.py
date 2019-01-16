@@ -1,3 +1,4 @@
+from Dealer import Dealer
 from Deck import Deck
 from Player import Player
 
@@ -6,23 +7,23 @@ class Game:
     def __init__(self):
         self.deck = Deck()
         self.players = []
-        self.player1 = Player("Jake")
-        self.player2 = Player("Bob")
+        self.player = Player("Jake")
+        self.dealer = Dealer("Dealer")
         self.no_winner = Player("Error")
-        self.players.append(self.player1)
-        self.players.append(self.player2)
+        self.players.append(self.player)
+        self.players.append(self.dealer)
 
     def start(self):
         self.deck.populate()
         self.deck.shuffle()
-        self.deck.deal()
         self.deal_cards()
 
-        for player in self.players:
-            self.take_go(player)
+        print("You have " + str(self.player.totalHandValue))
+        self.take_go(self.player)
+        self.dealer.play(self.deck, self.player)
 
-        winner = self.check_winner()
-        print("Congratulations, " + winner.name + " won!")
+        # winner = self.check_winner()
+        print(self.check_winner())
 
     def deal_cards(self):
         for player in self.players:
@@ -31,17 +32,20 @@ class Game:
             player.take_card(new_card)
             player.take_card(new_card2)
 
-
     def take_go(self, player):
-        while (player.is_bust() == False and player.ended_go == False):
+        while player.is_bust() == False and player.ended_go is False:
             print( player.name + " currently has " + str(player.totalHandValue) )
             player.get_user_input(self.deck)
 
     def check_winner(self):
-        winner = self.no_winner
+        winner = self.dealer
 
-        for player in self.players:
-            if (21 - player.totalHandValue) < (21 - winner.totalHandValue) and player.is_bust() == False:
-                winner = player
+        if (21 - self.player.totalHandValue) < (21 - winner.totalHandValue) and self.player.is_bust() is False:
+            winner = self.player
+        elif self.dealer.is_bust() and self.player.is_bust() is False:
+            winner = self.player
 
-        return winner
+        if winner == self.player:
+            return "Congratulations, you won!"
+        else:
+            return "Unlucky, the dealer won!"
