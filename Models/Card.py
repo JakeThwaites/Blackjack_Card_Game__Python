@@ -1,4 +1,4 @@
-from CardValue import CardValue
+from Models.CardValue import CardValue
 
 class Card:
     def __init__(self, suit, symbol):

@@ -1,8 +1,8 @@
 import unittest
 
-from Deck import Deck
-from Game import Game
-from Player import Player
+from Models.Deck import Deck
+from Models.Game import Game
+from Models.Player import Player
 
 
 class TestGame(unittest.TestCase):

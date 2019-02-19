@@ -1,7 +1,7 @@
 import unittest
-from Deck import Deck
-from Player import Player
-from Card import Card
+from Models.Deck import Deck
+from Models.Player import Player
+from Models.Card import Card
 
 
 class TestPlayer(unittest.TestCase):

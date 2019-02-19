@@ -1,6 +1,6 @@
-from Suit import Suit
-from CardValue import CardValue
-from Card import Card
+from Models.Suit import Suit
+from Models.CardValue import CardValue
+from Models.Card import Card
 import random
 
 

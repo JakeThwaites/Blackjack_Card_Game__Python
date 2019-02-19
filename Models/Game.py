@@ -1,6 +1,6 @@
-from Dealer import Dealer
-from Deck import Deck
-from Player import Player
+from Models.Dealer import Dealer
+from Models.Deck import Deck
+from Models.Player import Player
 
 
 class Game:

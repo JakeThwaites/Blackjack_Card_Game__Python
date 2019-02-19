@@ -1,4 +1,4 @@
-from Player import Player
+from Models.Player import Player
 
 
 class Dealer(Player):
